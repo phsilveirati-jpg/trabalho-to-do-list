@@ -1,127 +1,59 @@
-# 📋 Sistema To-Do List com Gestão de Usuários
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Aplicação web desenvolvida para a atividade avaliativa da disciplina de Qualidade de Software, com foco na aplicação prática de boas práticas de desenvolvimento, incluindo testes automatizados, integração contínua (CI/CD) e revisão de código.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-O sistema permite o gerenciamento de tarefas pessoais com autenticação de usuários e controle administrativo.
+## About Laravel
 
----
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-# 🎯 Objetivo
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Este projeto tem como objetivo demonstrar, na prática, a aplicação de conceitos fundamentais de qualidade de software:
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-* Desenvolvimento orientado a boas práticas
-* Testes automatizados
-* Integração contínua (CI/CD)
-* Revisão de código com Pull Requests
-* Controle de acesso e validação de usuários
+## Learning Laravel
 
----
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
 
-# 🌐 Visão Geral do Sistema
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-A aplicação consiste em um sistema web onde:
+## Laravel Sponsors
 
-* Usuários podem se cadastrar na plataforma
-* O acesso ao sistema depende de aprovação administrativa
-* Usuários aprovados podem gerenciar suas tarefas (To-Do List)
-* Um administrador possui controle sobre os usuários cadastrados
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
----
+### Premium Partners
 
-# ⚙️ Funcionalidades
+- **[Vehikl](https://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development)**
+- **[Active Logic](https://activelogic.com)**
 
-## 👤 Usuário
+## Contributing
 
-* Cadastro na plataforma
-* Login autenticado
-* Acesso condicionado à aprovação
-* Criação de tarefas
-* Marcação de tarefas como concluídas
-* Remoção de tarefas
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
----
+## Code of Conduct
 
-## 🛑 Sistema de Aprovação
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-* Novos usuários são cadastrados com status **pendente**
-* O acesso ao sistema só é liberado após aprovação do administrador
+## Security Vulnerabilities
 
----
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## 👨‍💼 Administração
+## License
 
-* Listagem de usuários cadastrados
-* Aprovação de novos usuários
-* Controle básico de acesso ao sistema
-
----
-
-# 🛠️ Tecnologias utilizadas
-
-* PHP (Laravel)
-* Livewire
-* Blade (templates)
-* SQLite (banco de dados)
-* HTML, CSS e JavaScript
-* Tema Metronic (interface)
-* PHPUnit (testes automatizados)
-* GitHub Actions (CI/CD)
-
----
-
-# 🧪 Testes automatizados
-
-O projeto inclui testes automatizados para validação das principais regras de negócio, como:
-
-* Cadastro de usuários
-* Controle de acesso (usuários aprovados vs pendentes)
-* Criação e manipulação de tarefas
-
----
-
-# 🔁 Pipeline CI/CD
-
-O projeto utiliza GitHub Actions para garantir a qualidade do código.
-
-### Fluxo:
-
-1. Um Pull Request é aberto
-2. A pipeline é executada automaticamente
-3. Os testes são executados
-4. O merge só é permitido com sucesso nos testes
-
----
-
-# 🔐 Controle de qualidade
-
-* Uso obrigatório de Pull Requests
-* Aprovação obrigatória antes do merge
-* Execução automática de testes
-* Bloqueio de alterações diretas na branch principal
-* Revisão de código com suporte automatizado
-
----
-
-# 🚀 Deploy
-
-A aplicação será executada em ambiente web, com possibilidade de publicação para demonstração conforme necessidade da atividade.
-
----
-
-# 👥 Equipe
-
-* **Pedro** – Gestão do projeto, definição de arquitetura, revisão de código e aprovação de Pull Requests
-* **Ricardo** – Desenvolvimento das funcionalidades e interface do sistema
-
----
-
-# 📅 Prazo
-
-Data de entrega: **14/04/2026**
-
----
-
-# 📖 Observações
-
-O projeto foi planejado com foco em simplicidade, organização e qualidade, evitando complexidade desnecessária e priorizando a correta aplicação dos conceitos exigidos na disciplina.
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
