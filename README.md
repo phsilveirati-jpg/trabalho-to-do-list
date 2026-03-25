@@ -1,61 +1,95 @@
-# 📋 Trabalho To-Do List
+# 📋 Sistema To-Do List com Gestão de Usuários
 
-Aplicação To-Do List desenvolvida para a atividade avaliativa da disciplina de Qualidade de Software, com foco na aplicação prática de testes automatizados, integração contínua (CI/CD) e revisão de código.
+Aplicação web desenvolvida para a atividade avaliativa da disciplina de Qualidade de Software, com foco na aplicação prática de boas práticas de desenvolvimento, incluindo testes automatizados, integração contínua (CI/CD) e revisão de código.
+
+O sistema permite o gerenciamento de tarefas pessoais com autenticação de usuários e controle administrativo.
 
 ---
 
 # 🎯 Objetivo
 
-Este projeto tem como objetivo demonstrar a aplicação de boas práticas de desenvolvimento de software, incluindo:
+Este projeto tem como objetivo demonstrar, na prática, a aplicação de conceitos fundamentais de qualidade de software:
 
+* Desenvolvimento orientado a boas práticas
 * Testes automatizados
-* Pipeline de integração contínua (CI/CD)
+* Integração contínua (CI/CD)
 * Revisão de código com Pull Requests
-* Controle de qualidade no processo de desenvolvimento
+* Controle de acesso e validação de usuários
 
 ---
 
-# 🛠️ Tecnologias utilizadas
+# 🌐 Visão Geral do Sistema
 
-* HTML
-* CSS
-* JavaScript
-* Jest (testes automatizados)
-* GitHub Actions (CI/CD)
-* GitHub Pages (deploy)
+A aplicação consiste em um sistema web onde:
+
+* Usuários podem se cadastrar na plataforma
+* O acesso ao sistema depende de aprovação administrativa
+* Usuários aprovados podem gerenciar suas tarefas (To-Do List)
+* Um administrador possui controle sobre os usuários cadastrados
 
 ---
 
 # ⚙️ Funcionalidades
 
-* ✅ Adicionar tarefas
-* ✅ Marcar tarefas como concluídas
-* ✅ Remover tarefas
-* ✅ Persistência de dados com LocalStorage
+## 👤 Usuário
+
+* Cadastro na plataforma
+* Login autenticado
+* Acesso condicionado à aprovação
+* Criação de tarefas
+* Marcação de tarefas como concluídas
+* Remoção de tarefas
+
+---
+
+## 🛑 Sistema de Aprovação
+
+* Novos usuários são cadastrados com status **pendente**
+* O acesso ao sistema só é liberado após aprovação do administrador
+
+---
+
+## 👨‍💼 Administração
+
+* Listagem de usuários cadastrados
+* Aprovação de novos usuários
+* Controle básico de acesso ao sistema
+
+---
+
+# 🛠️ Tecnologias utilizadas
+
+* PHP (Laravel)
+* Livewire
+* Blade (templates)
+* SQLite (banco de dados)
+* HTML, CSS e JavaScript
+* Tema Metronic (interface)
+* PHPUnit (testes automatizados)
+* GitHub Actions (CI/CD)
 
 ---
 
 # 🧪 Testes automatizados
 
-Os testes foram implementados utilizando Jest, cobrindo:
+O projeto inclui testes automatizados para validação das principais regras de negócio, como:
 
-* Criação de tarefas
-* Validação de entrada (input vazio)
-* Remoção de tarefas
-* Alteração de status (concluída/pendente)
+* Cadastro de usuários
+* Controle de acesso (usuários aprovados vs pendentes)
+* Criação e manipulação de tarefas
 
 ---
 
 # 🔁 Pipeline CI/CD
 
-O projeto utiliza GitHub Actions para execução automática de testes.
+O projeto utiliza GitHub Actions para garantir a qualidade do código.
 
 ### Fluxo:
 
 1. Um Pull Request é aberto
 2. A pipeline é executada automaticamente
-3. Os testes são rodados
-4. O merge só é permitido se os testes passarem
+3. Os testes são executados
+4. O merge só é permitido com sucesso nos testes
 
 ---
 
@@ -63,61 +97,22 @@ O projeto utiliza GitHub Actions para execução automática de testes.
 
 * Uso obrigatório de Pull Requests
 * Aprovação obrigatória antes do merge
-* Bloqueio de push direto na branch main
-* Execução automática de testes antes da integração
+* Execução automática de testes
+* Bloqueio de alterações diretas na branch principal
+* Revisão de código com suporte automatizado
 
 ---
 
 # 🚀 Deploy
 
-A aplicação é publicada utilizando GitHub Pages.
-
----
-
-# 📁 Estrutura do projeto
-
-```
-/project
- ├── index.html
- ├── style.css
- ├── app.js
- ├── functions.js
- ├── /tests
- │    └── functions.test.js
- ├── package.json
- └── .github/workflows/ci.yml
-```
+A aplicação será executada em ambiente web, com possibilidade de publicação para demonstração conforme necessidade da atividade.
 
 ---
 
 # 👥 Equipe
 
-* **Pedro** – Gestão do projeto, revisão de código e aprovação de PRs
-* **Ricardo** – Desenvolvimento e implementação das funcionalidades
-
----
-
-# 📌 Como executar o projeto
-
-1. Clone o repositório:
-
-```
-git clone <URL_DO_REPOSITORIO>
-```
-
-2. Instale as dependências:
-
-```
-npm install
-```
-
-3. Execute os testes:
-
-```
-npm test
-```
-
-4. Abra o arquivo `index.html` no navegador
+* **Pedro** – Gestão do projeto, definição de arquitetura, revisão de código e aprovação de Pull Requests
+* **Ricardo** – Desenvolvimento das funcionalidades e interface do sistema
 
 ---
 
@@ -129,4 +124,4 @@ Data de entrega: **14/04/2026**
 
 # 📖 Observações
 
-Este projeto foi desenvolvido com foco em simplicidade e qualidade, priorizando a correta aplicação dos conceitos de engenharia de software exigidos na atividade.
+O projeto foi planejado com foco em simplicidade, organização e qualidade, evitando complexidade desnecessária e priorizando a correta aplicação dos conceitos exigidos na disciplina.
