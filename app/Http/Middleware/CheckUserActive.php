@@ -15,6 +15,21 @@ class CheckUserActive
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (auth()->check()) {
+
+            $user = auth()->user();
+
+            // 👑 Admin sempre passa
+            if ($user->is_admin) {
+                return $next($request);
+            }
+
+            // 👤 Usuário comum precisa estar ativo
+            if ($user->status !== 'active') {
+                return redirect()->route('pending');
+            }
+        }
+
         return $next($request);
     }
 }
