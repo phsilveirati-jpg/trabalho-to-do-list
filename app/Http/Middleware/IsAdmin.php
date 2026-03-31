@@ -13,10 +13,14 @@ class IsAdmin
      *
      * @param  Closure(Request): (Response)  $next
      */
-public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->check() || !auth()->user()->is_admin) {
-            abort(403);
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
+
+        if (!auth()->user()->is_admin) {
+            abort(403, 'Acesso proibido: você não tem permissão para acessar a área de administração.');
         }
 
         return $next($request);

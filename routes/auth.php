@@ -18,6 +18,9 @@ Route::middleware('guest')->group(function () {
         ->name('password.reset');
 });
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 Route::middleware('auth')->group(function () {
     Volt::route('verify-email', 'pages.auth.verify-email')
         ->name('verification.notice');
@@ -28,4 +31,12 @@ Route::middleware('auth')->group(function () {
 
     Volt::route('confirm-password', 'pages.auth.confirm-password')
         ->name('password.confirm');
+
+    Route::post('logout', function (Request $request) {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
+    })->name('logout');
 });

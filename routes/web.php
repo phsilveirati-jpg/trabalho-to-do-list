@@ -59,17 +59,8 @@ Route::middleware(['auth', 'active'])->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-
-    Route::get('/', function () {
-        return redirect()->route('admin.users.index');
-    })->name('dashboard');
-
-    Route::get('/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
-    Route::patch('/users/{user}/activate', [\App\Http\Controllers\Admin\UserController::class, 'activate'])->name('users.activate');
-    Route::patch('/users/{user}/deactivate', [\App\Http\Controllers\Admin\UserController::class, 'deactivate'])->name('users.deactivate');
-
-});
+// Rotas de admin separadas para escalabilidade e organização.
+require __DIR__ . '/admin.php';
 
 /*
 |--------------------------------------------------------------------------

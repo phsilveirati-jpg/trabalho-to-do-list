@@ -1,0 +1,43 @@
+:root {
+    --admin-bg: #f4f6fc;
+    --admin-border: #dbe1ef;
+}
+
+.admin-shell {
+    background-color: var(--admin-bg);
+}
+
+.admin-content {
+    min-height: 80vh;
+}
+
+.admin-panel { 
+    background: #fff;
+    border: 1px solid var(--admin-border);
+    border-radius: .5rem;
+}
+
+.admin-panel h2 {
+    color: #1f2937;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid var(--admin-border);
+    padding: .75rem;
+}
+
+.admin-status-active {
+    color: #065f46;
+    font-weight: 700;
+}
+
+.admin-status-pending {
+    color: #92400e;
+    font-weight: 700;
+}
