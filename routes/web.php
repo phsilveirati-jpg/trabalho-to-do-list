@@ -9,7 +9,9 @@ use App\Http\Controllers\TaskController;
 |--------------------------------------------------------------------------
 */
 
-Route::view('/', 'welcome');
+Route::get('/', function () {
+    return view('landing.landing');
+})->name('landing');
 
 /*
 |--------------------------------------------------------------------------
@@ -57,11 +59,15 @@ Route::middleware(['auth', 'active'])->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/admin', function () {
-        return 'Painel Admin';
-    })->name('admin.dashboard');
+    Route::get('/', function () {
+        return redirect()->route('admin.users.index');
+    })->name('dashboard');
+
+    Route::get('/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
+    Route::patch('/users/{user}/activate', [\App\Http\Controllers\Admin\UserController::class, 'activate'])->name('users.activate');
+    Route::patch('/users/{user}/deactivate', [\App\Http\Controllers\Admin\UserController::class, 'deactivate'])->name('users.deactivate');
 
 });
 
